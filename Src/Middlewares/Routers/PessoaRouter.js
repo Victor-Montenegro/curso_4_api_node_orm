@@ -1,6 +1,6 @@
 import express from 'express';
 
-var livroRouter = express.Router();
+var pessoaRouter = express.Router();
 // var livroController = new LivroController();
 
 // livroRouter.get('/livros', livroController.GetLivros);
@@ -22,4 +22,4 @@ var livroRouter = express.Router();
 // livroRouter.delete('/livros/:id', livroController.DeleteLivroById);
 
 
-export default livroRouter;
+export default pessoaRouter;

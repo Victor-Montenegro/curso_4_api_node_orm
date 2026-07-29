@@ -1,4 +1,4 @@
-import livroRouter from "./LivroRouter.js";
+import pessoaRouter from "./PessoaRouter.js";
 
 const AddRouters = (app) => 
 {
@@ -8,7 +8,7 @@ const AddRouters = (app) =>
         res.send('Curso de Node.js Api');
     });
 
-    app.use(livroRouter);
+    app.use(pessoaRouter);
 }
 
 export default AddRouters;

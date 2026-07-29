@@ -18,7 +18,7 @@
     "url": "curso_4_api_node_orm"
   },
   "author": "victor.montenegro",
-  "type": "module",
+  "type": "commonjs",
   "license": "ISC",
   "description": ""
 }

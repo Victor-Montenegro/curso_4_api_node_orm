@@ -1,7 +1,10 @@
 {
   "dependencies": {
     "express": "^4.18.2",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "sequelize": "6.32.1",
+    "sequelize-cli": "6.6.1",
+    "sqlite3": "5.1.6"
   },
   "scripts": {
     "dev": "nodemon Server.js",
@@ -10,7 +13,6 @@
   "name": "curso_4_api_node_orm",
   "version": "1.0.0",
   "main": "Server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "curso_4_api_node_orm"

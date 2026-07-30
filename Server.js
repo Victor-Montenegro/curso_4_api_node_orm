@@ -1,4 +1,4 @@
-import app  from "./src/App.js";
+const app = require("./src/App.js");
 
 const PORT = 3000;
 

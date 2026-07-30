@@ -1,9 +1,10 @@
-import express from 'express';
+const { Router } = require('express');
+const PessoaController = require('../Controllers/PessoaController')
 
-var pessoaRouter = express.Router();
-// var livroController = new LivroController();
+var pessoaRouter = Router();
+var pessoaController = new PessoaController();
 
-// livroRouter.get('/livros', livroController.GetLivros);
+pessoaRouter.get('/pessoas', pessoaController.GetAll);
 
 // livroRouter.post('/livros/nomeAutor', livroController.GetLivrosByNomeAutor);
 
@@ -21,5 +22,4 @@ var pessoaRouter = express.Router();
 
 // livroRouter.delete('/livros/:id', livroController.DeleteLivroById);
 
-
-export default pessoaRouter;
+module.exports = { pessoaRouter };

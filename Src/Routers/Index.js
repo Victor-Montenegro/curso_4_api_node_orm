@@ -1,6 +1,6 @@
-import pessoaRouter from "./PessoaRouter.js";
+const { pessoaRouter } = require("./PessoaRouter.js");
 
-const AddRouters = (app) => 
+module.exports = AddRouters = (app) => 
 {
     app.get('/', (_ , res) =>
     {
@@ -9,6 +9,4 @@ const AddRouters = (app) =>
     });
 
     app.use(pessoaRouter);
-}
-
-export default AddRouters;
+};

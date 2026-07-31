@@ -4,7 +4,12 @@ const PessoaController = require('../Controllers/PessoaController')
 var pessoaRouter = Router();
 var pessoaController = new PessoaController();
 
-pessoaRouter.get('/pessoas', pessoaController.GetAll);
+pessoaRouter.get('/pessoas',(req,res,next) => pessoaController.GetAllAsync(req, res, next));
+
+pessoaRouter.get('/pessoas/:id', (req,res,next) => pessoaController.GetByIdAsync(req, res, next));
+
+pessoaRouter.put('/pessoas/:id', (req,res,next) => pessoaController.AtualizarIdentificaoPorIdAsync(req, res, next));
+
 
 // livroRouter.post('/livros/nomeAutor', livroController.GetLivrosByNomeAutor);
 
@@ -18,7 +23,6 @@ pessoaRouter.get('/pessoas', pessoaController.GetAll);
 
 // livroRouter.post('/livros', livroController.CreateLivro);
 
-// livroRouter.put('/livros/:id', livroController.UpdateLivroById);
 
 // livroRouter.delete('/livros/:id', livroController.DeleteLivroById);
 

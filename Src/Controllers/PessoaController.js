@@ -8,7 +8,7 @@ module.exports = class PessoaController extends ControllerBase
         super(new PessoaService());
     }
 
-    async AtualizarIdentificaoPorIdAsync(req, res, next)
+    async UpdateByIdAsync(req, res, next)
     {
         var pessoaId = req.params.id;
         var pessoaRequest = req.body;

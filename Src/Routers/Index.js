@@ -1,4 +1,7 @@
 const { pessoaRouter } = require("./PessoaRouter.js");
+const { categoriaRouter } = require("./CategoriaRouter.js");
+const { matriculaRouter } = require("./MatriculaRouter.js");
+const { cursoRouter } = require("./CursoRouter.js");
 
 module.exports = AddRouters = (app) => 
 {
@@ -8,5 +11,9 @@ module.exports = AddRouters = (app) =>
         res.send('Curso de Node.js Api');
     });
 
-    app.use(pessoaRouter);
+    app.use(
+        matriculaRouter,
+        pessoaRouter,
+        cursoRouter,
+        categoriaRouter);
 };

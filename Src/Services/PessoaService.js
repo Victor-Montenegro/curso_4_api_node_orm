@@ -9,7 +9,7 @@ module.exports = class PessoaService extends ServiceBase
         super(new PessoaRepository);
     }
 
-    async AtualizarIdentificaoPorIdAsync(pessoaRequest, id)
+    async UpdateByIdAsync(pessoaRequest, id)
     {
         var {nome, email} = pessoaRequest;
 
@@ -18,4 +18,5 @@ module.exports = class PessoaService extends ServiceBase
 
         await this._repository.AtualizarIdentificaoPorIdAsync(id, nome, email);
     }
+   
 }

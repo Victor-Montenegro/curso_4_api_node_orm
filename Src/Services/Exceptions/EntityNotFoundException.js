@@ -9,11 +9,11 @@ module.exports = class EntityNotFoundException extends Error
         this.message = `Nao foi possivel encontrar com a identificação ${id}`;
     }
 
-    static ThrowIfEntityIsNull(entity)
+    static ThrowIfEntityIsNull(entity, id)
     {
         if(IsNullOrWhiteSpace(entity))
         {
-            throw new EntityNotFoundException(entity);
+            throw new EntityNotFoundException(id);
         }
     }
 }

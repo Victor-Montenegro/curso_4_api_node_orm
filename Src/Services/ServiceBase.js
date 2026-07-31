@@ -1,5 +1,5 @@
 const PropertyNullException = require("../Exceptions/PropertyNullException");
-const EntityNotFoundException = require("./Exceptions/PessoaNotFoundException");
+const EntityNotFoundException = require("./Exceptions/EntityNotFoundException");
 
 module.exports = class ServiceBase
 {
@@ -14,9 +14,9 @@ module.exports = class ServiceBase
     {
         PropertyNullException.ThrowIfPropertyIsNull(id, 'id');
         
-        var entity = this._repository.FindByIdAsync(id);
+        var entity = await this._repository.FindByIdAsync(id);
         
-        EntityNotFoundException.ThrowIfPropertyIsNull(entity);
+        EntityNotFoundException.ThrowIfEntityIsNull(entity, id);
 
         return entity;
     }
@@ -26,5 +26,12 @@ module.exports = class ServiceBase
         var entities = await this._repository.FindAllAsync();
         
         return entities;
+    }
+
+    async CreateAsync(entityRequest)
+    {
+        var createdEntity = await this._repository.CreateAsync(entityRequest);
+
+        return createdEntity;
     }
 }

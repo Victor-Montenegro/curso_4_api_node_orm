@@ -8,7 +8,9 @@ pessoaRouter.get('/pessoas',(req,res,next) => pessoaController.GetAllAsync(req, 
 
 pessoaRouter.get('/pessoas/:id', (req,res,next) => pessoaController.GetByIdAsync(req, res, next));
 
-pessoaRouter.put('/pessoas/:id', (req,res,next) => pessoaController.AtualizarIdentificaoPorIdAsync(req, res, next));
+pessoaRouter.put('/pessoas/:id', (req,res,next) => pessoaController.UpdateByIdAsync(req, res, next));
+
+pessoaRouter.post('/pessoas', (req,res,next) => pessoaController.CreateAsync(req, res, next));
 
 
 // livroRouter.post('/livros/nomeAutor', livroController.GetLivrosByNomeAutor);

@@ -9,7 +9,7 @@ module.exports = class RepositoryBase
 
     async FindByIdAsync(id)
     {
-        var entity = await this.table.find({where: {id: id}});
+        var entity = await this._table.findByPk(id);
     
         return entity;
     }
@@ -19,5 +19,12 @@ module.exports = class RepositoryBase
         var entity = this._table.findAll();
 
         return entity;
+    }
+    
+    async CreateAsync(entity)
+    {
+        var createdEntity = await this._table.create(entity);
+
+        return createdEntity;
     }
 }

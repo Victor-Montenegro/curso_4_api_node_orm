@@ -13,8 +13,6 @@ module.exports = class ControllerBase
         {
             var id = req.params.id;
 
-            console.log('aaaaaaa', id);
-
             var entity = await this._serviceBase.FindByIdAsync(id);
          
             res
@@ -31,11 +29,28 @@ module.exports = class ControllerBase
     {
         try 
         {
-            var pessoas = await this._serviceBase.FindAllAsync();
+            var entities = await this._serviceBase.FindAllAsync();
          
             res
             .status(200)
-            .json(pessoas)
+            .json(entities)
+        } 
+        catch (exception)
+        {
+            next(exception);
+        }
+    }
+  
+    async CreateAsync(req, res, next)
+    {
+        try 
+        {
+            var request = req.body;
+            var entity = await this._serviceBase.CreateAsync(request);
+         
+            res
+            .status(201)
+            .json(entity)
         } 
         catch (exception)
         {
